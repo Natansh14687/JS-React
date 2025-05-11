@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Elements</h1>
+    <ul id="container">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+    </ul>
+    <button onclick="addingItems()">Add Item</button>
+</body>
+</html>
+
+<script type="text/javascript">
+    let itemByClassName = document.getElementsByClassName("item");
+    let itemByQuerySelectorAll = document.querySelectorAll(".item");
+
+    function addingItems(){
+        let ele = document.createElement("li");
+        ele.className = "item";
+        ele.textContent = "New Item";
+        document.getElementById("container").appendChild(ele);
+
+        console.log("length of HTMLCollection : ", itemByClassName.length); // length is live (dynamic)
+        console.log(itemByClassName);
+        console.log("lenght of NodeList : ", itemByQuerySelectorAll.length); // length is static (not increased)
+        console.log(itemByQuerySelectorAll);
+    }
+</script>

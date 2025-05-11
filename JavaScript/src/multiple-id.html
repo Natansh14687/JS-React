@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="heading">Hey User</p>
+    <p id="heading1" class="p2">Welcome User</p> <!-- two ids are useless if given to an element-->
+</body>
+</html>
+<script type="text/javascript">
+    pElement = document.getElementById("heading");
+    console.log(pElement);
+    pElement.textContent = "Hii User";
+    pElement.style.color = "red";
+    pElement.style.fontFamily = "Arial";
+    pElement.style.fontWeight = "bolder"
+    pElement.style.fontSize = "50px"
+
+    pElement2 = document.getElementById("heading1");
+    console.log(pElement2);
+    pElement2.style.cssText = 'color:green; font-weight:bold'
+
+
+    
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <ul id="shopping-list">
+        <li>IPhone</li>
+        <li>OnePlus</li>
+        <li>Samsung</li>
+    </ul>
+    <button onclick="highLightItems()">Highlight</button>
+</body>
+</html>
+<script type="text/javascript">
+    function highLightItems(){
+        let ele = document.getElementsByTagName("li");
+        console.log(ele);
+        console.log(Array.from(ele));
+        
+        Array.from(ele).forEach((item) => {
+            item.style.cssText = "color:red; font-weight:bold;"
+        })
+        
+    }
+
+</script>

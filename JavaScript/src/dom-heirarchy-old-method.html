@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        function loadContent(){
+            console.log("*** loaded ***");
+            window.document.images[0].src = "../public/images/itachi-image-1.jpg";
+            window.document.forms[0].elements[1].textContent = "Register";
+            window.document.forms[1].elements[1].textContent = "Login";
+        }
+    </script>
+</head>
+<body onload="loadContent()">
+    <div>
+        <img alt="" height="200" width="200" border="1">
+    </div>
+    <div>
+        <form action="">
+            <h3>Register</h3>
+            User Name : <input type="text"> <button></button>
+        </form>  
+    </div>
+    <div>
+        <form action="">
+            <h3>Login</h3>
+            Email : <input type="email"> <button></button>
+        </form>  
+    </div><br>
+    <div>
+        <button type="submit">submit</button>
+    </div>
+</body>
+</html>
