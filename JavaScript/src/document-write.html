@@ -1,0 +1,38 @@
+<!--
+
+Output
+======
+What happens when you click the button?
+The whole existing page (including the button, heading, etc.) gets wiped out.
+
+Only the content inside document.write(...) is shown.
+
+Why? Because once the page finishes loading, document.write() acts like:
+
+"Let me rebuild the entire document from scratch now!"
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        function addContent(){
+            document.writeln("Welcome to the world of javascript <br>");
+            document.write("javascript is cool stuff<br>");
+            document.writeln("Javascript is too dangerous if we don't understand...")
+            let h1 = document.createElement("h1");
+            h1.textContent = "Welcome to the world of javascript";
+            document.body.appendChild(h1);
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello User</h1>
+    <button onclick="addContent()">Add Content</button>
+</body>
+</html>
