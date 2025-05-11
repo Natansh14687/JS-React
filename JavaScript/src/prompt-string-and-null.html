@@ -1,0 +1,30 @@
+<!--
+prompt return string and null 
+string : when entered something in box or pressed ok without entering
+null when cancel button is clicked or esc is pressed-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function createFolder(){
+            console.info("create folder button is clicked");
+            let input = prompt("pls enter the folder name");
+            if(input==null){
+                document.querySelector("h1").textContent = "The user has clicked on cancel button";
+            }else if(input.length == 0){
+                document.querySelector("h1").textContent = "You haven't input anything";
+            }else{
+                document.querySelector("h1").outerHTML = "<h1 style='color:green; font-family:Algerian;'>folder created : "+input+"</h1>"
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="createFolder()">create folder</button>
+    <h1></h1>
+</body>
+</html>
