@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        function doTask(){
+            let userName = prompt("Please enter your name");
+            let userAge = prompt("Please enter your age");
+        //     document.write(`Your name is ${userName} and your age is ${userAge}, status : ${userAge >= 18 ? "major" : "minor"}`)
+            // here in this code for comparison type coercion takes place for userAge to compare string to number
+            // for example output of second prompt will be string 20 if we provide number input in it but during above comparison >=18 type coercion takes place....
+        }
+        doTask();
+
+        function doOneMoreTask(user){
+            return `hello ${user}`;
+        }
+        
+        document.write(`greetings msg : ${doOneMoreTask("Natansh")} <br>`);
+
+        function printByHighlighting(string,value){
+            console.log("call is made....");
+            return `${string[0]} <b> ${value} </b> ${string[1]}`;
+        }
+        let name = "javascript";
+        document.write(printByHighlighting`welcome ${name} to pwioi`);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
