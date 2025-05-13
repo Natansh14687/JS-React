@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function emailValidate(){
+            const emailInput = document.getElementById("emailInput");
+            let msg = document.getElementById("err-msg");
+            let flag = emailInput.value.indexOf("@");
+            if(flag == -1){
+                msg.innerHTML = "Invalid Email";
+                msg.style.cssText = 'color:red; font-family:Algerian; font-weight:bold;'
+            }else{
+                flag = emailInput.value.endsWith("gmail.com");
+                if(flag){
+                    msg.innerHTML = "";
+                }else{
+                    msg.textContent = "only gmail is allowed";
+                    msg.style.cssText = 'color:red; font-family:Algerian; font-weight:bold;'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <dl>
+            <dt>Email</dt>
+            <dd><input type="text" id="emailInput" onblur="emailValidate()"></dd>
+            <dd id="err-msg">
+
+            </dd>
+        </dl>
+    </form>
+</body>
+</html>

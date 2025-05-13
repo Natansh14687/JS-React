@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        function verifyCard(){
+            const cardNumber = document.getElementById("cardNumber");
+            const img = document.getElementById("img");
+            let flag = cardNumber.value.startsWith("4455");
+            if(flag){
+                img.src = "../public/images/visa-logo.png";
+            }
+            // else if(cardNumber.value.length == 0){
+            //     img.style.display = "none";
+            // }
+            else{
+                img.src = "../public/images/mastercard-logo.png";
+            }
+
+        }
+
+        function verifyEmail(){
+            const gmail = document.getElementById("gmail");
+            const msg = document.getElementById("err-msg");
+            let flag = gmail.value.includes('@');
+            if(!flag){
+                msg.innerHTML = "<h3 style='color:red; font-family:Algerian;'>Invalid Email</h3>"
+            }else{
+                flag = gmail.value.endsWith("@gmail.com");
+                if(flag){
+                    msg.innerHTML = "";
+                }else{
+                    msg.innerHTML = "<h3 style='color:green; font-family:Algerian;'>only gmail is accepted</h3>";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <dl>
+            <dt>Your card number</dt><dd><input type="text" id="cardNumber" style="height: 30px;" onblur="verifyCard()">
+                <img src="" alt="" border="1" height="30" id="img" width="30">
+            </dd>
+            <dt>Your Gmail Account</dt>
+            <dd><input type="text" id="gmail" style="height: 30px;" onblur="verifyEmail()"></dd>
+            <dd id="err-msg">
+
+            </dd>
+        </dl>
+        
+
+    </form>
+</body>
+</html>
