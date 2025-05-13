@@ -1,0 +1,44 @@
+<!--
+charCodeAt(number): if number is of null|undefined|NaN 
+		    it would adjust to '0'th index data.
+
+Same for charAt();
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        function nameValidate(){
+            const name = document.getElementById("name");
+            const msg = document.getElementById("msg");
+            let flag = name.value.charCodeAt(0)>=65 && name.value.charCodeAt(0)<=90;
+            if(name.value.length == 0){
+                msg.textContent = "Required";
+                msg.style.cssText = "color:red; font-family:Arial";
+            }else if(!flag){
+                msg.textContent = "First letter should be capital";
+                msg.style.cssText = "color:red; font-family:Arial";
+            } 
+            else{
+                msg.textContent = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <dl>
+            <dt>Enter Name</dt>
+            <dd><input type="text" id="name" onblur="nameValidate()" required></dd>
+            <dd id="msg">
+
+            </dd>
+        </dl>
+    </form>
+</body>
+</html>
