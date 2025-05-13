@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        let labelName = prompt("Enter the label name","EMAIL | PASSWORD | DATE");
+        let type = prompt("Enter type of label name", "EMAIL | PASSWORD | DATE");
+        let template = `
+        <label>
+            ${labelName}
+        </label>
+        <input type="${type}"" id="testInput">
+        `
+        
+        document.write(template);
+        window.onload = function(){
+            console.log(document.getElementById("testInput").outerHTML);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
