@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="icon" href="../public/images/netflix-icon.ico">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        body{
+            background-size: cover;
+            color: white;
+            overflow: hidden;
+        }
+        .shade{
+            background-color: rgba(0,0,0,0.6);
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .logo{
+            color: red;
+            font-weight: 900;
+            font-size: xxx-large;
+            margin-left: 100px;
+        }
+        header nav{
+            margin-right: 100px;
+            margin-top: 15px;
+        }
+        .language{
+            border: 1px solid white;
+            padding: 5px 20px 5px 10px;
+            background-color: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .sign-in-button{
+            background-color: red;
+            padding: 7px 14px 7px 14px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .sign-in-button:hover{
+            background-color: rgb(116, 4, 4);
+            transition: 0.5s ease-out;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .title{
+            font-size: 55px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .section-1{
+            font-weight: bold;
+            font-size: large;
+            margin: 20px 0px 20px 0px;
+        }
+        .section-2{
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+        .email-input-box{
+            border: 1px solid white;
+            background-color: rgba(23,24,28,0.5);
+            padding: 20px 250px 20px 15px;
+            border-radius: 5px;
+        }
+        .get-started-button{
+            background-color: red;
+            padding: 20px 30px 20px 30px;
+            border-radius: 7px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: large;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body background="../public/images/netflix-bg.jpg">
+    <div class="shade">
+        <header>
+            <div class="logo">NETFLIX</div>
+            <nav>
+                <span class="language">English &nbsp;&nbsp;<span class="bi-caret-down-fill"></span></span>
+                <span class="sign-in-button">Sign In</span>
+            </nav>
+        </header>
+        <section>
+            <div>
+                <div class="title">Unlimited movies, TV <br> shows and more</div>
+                <div class="section-1">Starts at <span class="bi-currency-rupee">149.</span> Cancel at any time.</div>
+                <div class="section-2">Ready to watch? Enter your Email to create or restart your membership.</div>
+                <main>
+                    <span class="email-input-box">Email address</span>
+                    <span class="get-started-button">Get Started &nbsp;&nbsp;&nbsp;<span class="bi-chevron-right"></span></span>
+                </main>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
