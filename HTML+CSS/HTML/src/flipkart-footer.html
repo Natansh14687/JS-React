@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Footer</title>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        footer{
+            background-color: #212121;
+            color: white;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .col-left{
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+        .col-right{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            border-left: 1px solid #878673;
+            padding-left: 20px;
+        }
+        nav div{
+            color: #878673;
+            margin-bottom: 20px;
+        }
+        .col-left nav span{
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: small;
+        }
+        .col-left nav span:hover{
+            text-decoration: underline;
+        }
+        .col-right div~p{
+            line-height: 5px;
+            font-size: small;
+        }
+        nav aside div{
+            margin-top: 30px;
+        }
+        nav aside span{
+            font-size: larger;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .tele-number{
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="col-left">
+            <nav>
+                <div>ABOUT</div>
+                <span>Contact Us</span>
+                <span>About Us</span>
+                <span>Careers</span>
+                <span>Flipkart Stories</span>
+                <span>Press</span>
+                <span>Corporate Information</span>
+            </nav>
+            <nav>
+                <div>GROUP COMPANIES</div>
+                <span>Myntra</span>
+                <span>Cleartrip</span>
+                <span>Shopsy</span>
+            </nav>
+            <nav>
+                <div>HELP</div>
+                <span>Payments</span>
+                <span>Shipping</span>
+                <span>Cancellation & Returns</span>
+                <span>FAQ</span>
+            </nav>
+            <nav>
+                <div>CONSUMER POLICY</div>
+                <span>Cancellation & Returns</span>
+                <span>Terms of Use</span>
+                <span>Security</span>
+                <span>Privacy</span>
+                <span>Sitemap</span>
+                <span>Grievence Redressal</span>
+                <span>EPR Compliance</span>
+            </nav>
+        </div>
+        <div class="col-right">
+            <nav>
+                <div>Mail Us:</div>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia &</p>
+                <p>Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103,</p>
+                <p>Karnataka, India</p>
+
+                <aside>
+                    <div>Social:</div>
+                    <span class="bi-facebook"></span>
+                    <span class="bi-twitter-x"></span>
+                    <span class="bi-youtube"></span>
+                    <span class="bi-instagram"></span>
+                </aside>
+            </nav>
+            <nav>
+                <div>Registered Office Address:</div>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia &</p>
+                <p>Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103,</p>
+                <p>Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <p>Telephone: <span class="tele-number">044-45614700</span> / <span class="tele-number">044-67415800</span></p>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
