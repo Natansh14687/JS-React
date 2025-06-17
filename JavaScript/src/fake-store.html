@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        header{
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 70px;
+            align-items: center;
+            justify-content: space-around;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .title{
+            font-size: larger;
+            font-weight: bold;
+        }
+        header nav span{
+            margin-left: 40px;
+        }
+        .cart{
+            background-color: orange;
+            padding: 7px;
+            border-radius: 5px;
+        }
+        .number-of-items-in-cart{
+            background-color: red;
+            padding: 3px;
+            border-radius: 50%;
+            display: inline-block;
+            width: 15px;
+            text-align: center;
+        }
+        
+
+        article{
+            background-color: black;
+            color: white;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .bi-lightning-charge-fill{
+            color: gold;
+        }
+
+        section{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            margin-top: 40px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function loadData(){
+            loadCategories();
+            loadMain();
+        }
+
+        async function loadCategories(){
+            const url = "https://fakestoreapi.com/products/categories";
+            let response = await fetch(url);
+            let categories = await response.json();
+
+            categories.unshift("All");
+            categories.forEach(category => {
+                const categoryList = document.getElementById("category-name");
+                const option = document.createElement("option");
+                option.value = category;
+                option.textContent = category;
+                categoryList.appendChild(option);
+                
+            });
+        }
+
+        async function loadMain(){
+            const url = "https://fakestoreapi.com/products/";
+
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            data.forEach((product) => {
+                
+            })
+        }
+    </script>
+</head>
+<body onload="loadData()">
+    <header>
+        <div class="title">FakeStore</div>
+        <nav>
+            <span>Home</span>
+            <span>Electronics</span>
+            <span>Jewellery</span>
+            <span>MensClothing</span>
+            <span>WomensClothing</span>
+        </nav>
+        <div class="cart"><span class="bi-cart"></span> Your Cart <span class="number-of-items-in-cart">0</span></div>
+    </header>
+
+    <article>
+        <span class="bi-lightning-charge-fill"></span> <span>HOLIDAY DEALS 50% OFF - LIMITED OFFER </span><span class="bi-lightning-charge-fill"></span>
+    </article>
+
+    <section>
+        <nav class="categories">
+            Select Category <br><br>
+            <select name="" id="category-name">
+
+            </select>
+        </nav>
+        <main class="cards">
+
+        </main>
+    </section>
+</body>
+</html>
