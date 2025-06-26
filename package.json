@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Natansh14687/JS-React#readme",
   "description": "",
   "dependencies": {
+    "bootstrap": "^5.3.7",
     "bootstrap-icons": "^1.13.1"
   }
 }
