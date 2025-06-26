@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    <form action="//" class="container-fluid border h-50 border-success border-2 w-50 p-5">
+        <h4 class="text-warning">Registeration Form</h4>
+        <dl>
+            <dt><label for="username" class="">Username</label></dt>
+            <dd><input type="text" name="username" id="username"></dd>
+            <dd class="text-primary">Name is Required</dd>
+            <dt><label for="password">Password</label></dt>
+            <dd><input type="password" name="pass" id="password"></dd>
+            <button type="submit" class="border border-none bg-secondary text-white mt-2">Submit</button>
+        </dl>
+    </form>
+</body>
+</html>
