@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Classes</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container-fluid p-3">
+    <form action="//">
+        <h3 class="text-success">Registeration Form</h3>
+        <dl class="border border-2 border-info rounded w-50 p-3">
+            <dt><label for="username" class="form-label">Username</label></dt>
+            <dd><input type="text" name="username" id="username" class="form-control"></dd>
+            <dt><label for="password" class="form-label">Password</label></dt>
+            <dd><input type="password" name="password" id="password" class="form-control"></dd>
+            <dt><label for="citySelection" class="form-label">Select City</label></dt>
+            <dd><select name="city" id="citySelection" class="form-select">
+                <option value="hyderabad">Hyderabad</option>
+                <option value="banglore" selected>Banglore</option>
+                <option value="goa">Goa</option>
+            </select></dd>
+            <dt><label for="priceRange" class="form-label">Price Range</label></dt>
+            <dd><input type="range" name="priceRange" id="priceRange" class="form-range"></dd>
+            <dt>Subscribed</dt>
+            <dd class="form-switch"><input type="checkbox" name="subscribed" id="subscribed" class="form-check-input"> <label for="subscribed" class="form-check-label form-label">YES</label></dd>
+        </dl>
+        <button type="submit" class="border border-dark border-3 bg-success rounded">Submit</button>
+    </form>
+</body>
+</html>
