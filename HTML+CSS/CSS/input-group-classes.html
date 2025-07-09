@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <form action="//" class="p-3">
+        <h2>Amazon Search Bar</h2>
+        <div class="input-group w-50">
+            <select name="category" id="category" class="input-group-text">
+                <option value="all">All</option>
+                <option value="mobiles">Mobiles</option>
+                <option value="electronics">Electronics</option>
+            </select>
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Amazon.in">
+            <button class="bi-search btn btn-warning"></button>
+        </div>
+
+        <h2 class="mt-4">Netflix Register</h2>
+        <div class="bg-dark w-50 p-4 input-group-lg input-group">
+            <input type="email" name="userEmail" id="user-email" placeholder="Your Email Address" class="form-control">
+            <button class="btn btn-danger ms-2">Get Started <span class="bi-chevron-bar-right"></span></button>
+        </div>
+
+        <h2 class="mt-4">Password</h2>
+        <div class="input-group w-50">
+            <span class="bi-key-fill input-group-text"></span>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+            <span class="bi-check-square bg-success text-light input-group-text" ></span>
+        </div>
+
+        <h2 class="mt-4">Price</h2>
+        <div class="input-group w-50">
+            <span class="bi-currency-rupee input-group-text text-light bg-dark"></span>
+            <input type="number" name="price" id="price" class="form-control">
+            <span class="input-group-text bg-dark text-light">.00</span>
+        </div>
+    </form>
+</body>
+</html>
