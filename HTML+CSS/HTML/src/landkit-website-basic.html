@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Bootstrap Themes</title>
+    <link rel="icon" href="../public/images/bootstrap-icon.ico">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 15px;
+        }
+        .title{
+            color: #335EEA;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: -70px;
+        }
+        header nav{
+            margin-bottom: 7px;
+        }
+        header nav span{
+            font-weight: lighter;
+            font-size: 10px;
+            color: grey;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .buy-now-button{
+            background-color: #335EEA;
+            font-size: small;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            margin-left: -70px;
+            cursor: pointer;
+        }
+        .buy-now-button:hover{
+            transform: translateY(-2px);
+            transition: 0.3s;
+        }
+
+        main{
+            display: flex;
+            justify-content: space-evenly;
+            height: 400px;
+            align-items: center;
+        }
+        .text-area h1{
+            font-weight: 100;
+            font-size: 40px;
+            line-height: 50px;
+            margin-top: -5px;
+        }
+        .text-area h1 span{
+            color: #335EEA;
+        }
+        .text-area p{
+            font-weight: 100;
+            color: grey;
+            margin-top: -10px;
+            line-height: 25px;
+        }
+        .nav-buttons{
+            margin-top: 40px;
+        }
+        #pages-view{
+            background-color: #335EEA;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #pages-view:hover{
+            background-color: #2727e2;
+            transform: translateY(-2px);
+            transition: 0.3s;
+        }
+        #documentation{
+            background-color: #ebeefa;
+            color: #335EEA;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            display: inline-block;
+        }
+        #documentation:hover{
+            background-color: #E1E7FC;
+            transform: translateY(-2px);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">Landkit.</div>
+        <nav>
+            <span>Landings</span>
+            <span>Pages</span>
+            <span>Account</span>
+            <span>Documentation</span>
+        </nav>
+        <div class="buy-now-button">Buy now</div>
+    </header>
+
+    <main>
+        <div class="text-area">
+            <h1 class="welcoming-msg">Welcome to <span>Landkit.</span> <br>Develop anything.</h1>
+            <p>Build a beautiful, modern website with flexible <br>Bootstrap components built from scratch.</p>
+            <div class="nav-buttons">
+                <span id="pages-view">View all pages &nbsp;&nbsp;&nbsp;<span class="bi-arrow-right"></span></span>
+                <span id="documentation">Documentation</span>
+            </div>
+        </div>
+
+        <div class="image-area">
+            <img src="../public/images/landkit-banner.png" alt="" height="250px" width="400px">
+        </div>
+    </main>
+</body>
+</html>
