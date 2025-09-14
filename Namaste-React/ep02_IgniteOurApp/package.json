@@ -1,0 +1,32 @@
+{
+  "name": "ep02_igniteourapp",
+  "version": "1.0.0",
+  "description": "Just testing how to configure packages using npm",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natansh14687/JS-React.git"
+  },
+  "keywords": [
+    "curious"
+  ],
+  "author": "Natansh Khurana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Natansh14687/JS-React/issues"
+  },
+  "homepage": "https://github.com/Natansh14687/JS-React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist":[
+    "last 2 version"
+  ]
+  
+}
