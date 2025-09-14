@@ -1,0 +1,11 @@
+{
+    "userName" : "sachin",
+    "age": 51,
+    "teams" : ["MI","CSK"],
+    "records":{
+                "Centuries": 100,
+                "average" : 53.5,
+                "Brand"   : "MRF"
+            },
+    "isMarried" : true
+}

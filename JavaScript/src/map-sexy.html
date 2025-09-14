@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        let arr = [1,2,3,4];
+        console.log(arr);
+        console.log(arr.length);
+        let newArr = arr.map(function(value,index){
+            index * 3;
+            return value * 3;
+        })
+        console.log(newArr);
+        console.log(newArr.length);
+        
+
+        let userApi = [
+            {
+                userName : 'sachin',
+                age  : 51,
+                gender: 'M'
+            },
+            {
+                userName : 'kohli',
+                age  : 38,
+                gender: 'M'
+            }
+        ];
+        console.log(userApi);
+        let names = userApi.map(function(user){
+            return user.userName;
+        })
+
+        console.log(names);
+        const ol = document.createElement("ol");
+        userApi.map(function(user){
+            const li = document.createElement("li");
+            li.textContent = user.userName;
+            ol.appendChild(li);
+        })
+        document.body.appendChild(ol);
+    </script>
+</body>
+</html>

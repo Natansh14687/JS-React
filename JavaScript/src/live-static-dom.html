@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="item">
+        <p class="box">Hello</p>
+        <p class="box">World</p>
+    </div>
+    <button onclick="addItem()">Add Item</button>
+
+    <script type="text/javascript">
+        let byClassName = document.getElementsByClassName("box");
+        let byQueryAll = document.querySelectorAll(".box");
+
+        function addItem(){
+            const p = document.createElement("p");
+            p.className = "box";
+            p.textContent = "Natansh";
+            document.getElementById("item").appendChild(p);
+
+            console.log("by className = ", byClassName);
+            console.log("by QueryAll", byQueryAll);
+        }
+    </script>
+</body>
+</html>

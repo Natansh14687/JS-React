@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Preview</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody id="dataTable" align="center">
+
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        async function loadDataOnTable(){
+            try{
+                const url = "../../HTML+CSS/HTML/src/products.json";
+                console.log("Data is loaded through : ", url);
+                let response = await fetch(url);
+                const products = await response.json();
+
+                const dataTable = document.getElementById("dataTable");
+                products.forEach((product) => {
+                    const tr = document.createElement("tr");
+                    const tdTitle = document.createElement("td");
+                    const tdPhoto = document.createElement("td");
+                    const tdPrice = document.createElement("td");
+
+                    tdTitle.textContent = product.Title;
+                    tdPhoto.innerHTML = `<img src="${product.Photo}"" height="50px" width="50px">`;
+                    tdPrice.textContent = product.Price;
+
+                    
+                    tr.appendChild(tdTitle);
+                    tr.appendChild(tdPhoto);
+                    tr.appendChild(tdPrice);
+                    dataTable.appendChild(tr);
+                })
+
+            }catch(error){
+                console.log(error);
+            }
+        }
+
+        loadDataOnTable();
+    </script>
+</body>
+</html>

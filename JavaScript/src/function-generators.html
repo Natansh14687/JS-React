@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function* generateValues(){
+            yield "Aman";
+            yield "Dushyant";
+            yield "Rohit";
+            yield "Hemant";
+            yield "Navneet";
+            yield "Raghav";
+            yield "Ritik"
+            yield "Subhasis";
+        }
+        // console.log(generateValues());
+        let gen = generateValues();
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        // console.log(gen.next());
+        
+        console.log();
+        console.log();
+
+        let result = gen.next();
+        while(!result.done){
+            console.log(result);
+            result = gen.next();
+        }
+        
+        
+    </script>
+</body>
+</html>

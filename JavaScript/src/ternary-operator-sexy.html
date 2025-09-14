@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script type="text/javascript">
+
+        function toggleButton(){
+            const sortBtn = document.getElementById("sortBtn");
+            sortBtn.className = sortBtn.className == "bi-sort-alpha-down" ? "bi-sort-alpha-up" : "bi-sort-alpha-down";
+        }
+
+        function changeStatus(){
+            const checkbox = document.getElementById("checkbox");
+            let msgStatus = document.getElementById("msgStatus");
+            msgStatus.textContent = checkbox.checked == true ? "Available" : "Out of Stock";
+        }
+
+        function showImg(){
+            const imgShow = document.getElementById("imgShow");
+            const itachiImage = document.getElementById("itachiImage");
+            imgShow.textContent = imgShow.textContent == "Show" ? "Hide" : "Show";
+            itachiImage.style.display = imgShow.textContent == "Show" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <button class="bi-sort-alpha-down" id="sortBtn" onclick="toggleButton()"></button>
+    <div style="margin-top: 10px;">
+        <input type="checkbox" name="" id="checkbox" onchange="changeStatus()">
+        <span id="msgStatus">Out of Stock</span>
+    </div>
+    <div style="margin-top: 10px;">
+        <button id="imgShow" onclick="showImg()">Show</button><br><br>
+        <img src="../public/images/itachi-image-1.jpg" alt="" style="display: none;" width="100px" height="100px" id="itachiImage">
+    </div>
+</body>
+</html>

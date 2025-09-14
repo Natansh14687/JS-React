@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <style type="text/css">
+        section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .start{
+            background-color: green;
+            color: white;
+        }
+        .stop{
+            background-color: red;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <button class="start">start</button>
+            <button class="stop">stop</button>
+        </div>
+    </section>
+    <h1 align="center">
+
+    </h1>
+
+    <script type="text/javascript">
+
+        
+        function getTime(){
+            let now = new Date();
+            // console.log(now.toLocaleTimeString());
+            document.getElementsByTagName("h1")[0].textContent = now.toLocaleTimeString();
+        }
+
+        let id;
+        document.getElementsByClassName("start")[0].addEventListener('click', function(){
+            id = setInterval(getTime,1000);
+            console.log(id);
+        })
+        document.getElementsByClassName("stop")[0].addEventListener('click',function(){
+            clearInterval(id);
+        })
+    </script>
+</body>
+</html>

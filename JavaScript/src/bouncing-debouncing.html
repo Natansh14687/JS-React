@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Debouncing</title>
+    <style type="text/css">
+        button{
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">
+
+    </h1>
+    <button>STOP</button>
+
+    <script type="text/javascript">
+        function h11(){
+            document.getElementsByTagName("h1")[0].textContent = "Hello User"
+        }
+        function h12(){
+            document.getElementsByTagName("h1")[0].textContent = "Hiee User"
+        }
+        function h13(){
+            document.getElementsByTagName("h1")[0].textContent = "Byee User"
+        }
+
+        // h11();
+        // h12();
+        // h13();
+
+        setTimeout(h11,3000);
+        let id = setTimeout(h12,6000);
+        setTimeout(h13,9000);
+
+        document.getElementsByTagName("button")[0].addEventListener('click', function(){
+            clearTimeout(id)
+        })
+    </script>
+</body>
+</html>

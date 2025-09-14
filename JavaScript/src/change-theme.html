@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function changeTheme(){
+            let loginForm = document.getElementById("loginForm");            
+            let btnLogin = document.getElementById("btnLogin");
+            let themeCheckBox = document.getElementById("themeCheckBox");
+
+            if(themeCheckBox.checked){
+                loginForm.className = "bg-dark text-white p-4 w-25 border border-2 rounded";
+                btnLogin.className = "btn btn-light w-100";
+            }else{
+                loginForm.className = "w-25 border border-2 p-4 rounded bg-light text-dark";
+                btnLogin.className = "btn btn-dark w-100";
+            }
+            
+        }
+    </script>
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height:100vh">
+    <form action="" class="w-25 border border-2 p-4 rounded bg-light text-dark" id="loginForm">
+        <div class="form-switch" style="margin-bottom: 10px;">
+            <input type="checkbox" name="" id="themeCheckBox" class="form-check-input" onclick="changeTheme()">
+            <label for="themeCheckBox" class="form-check-label" onclick="changeTheme()">Dark Theme</label>
+        </div>
+
+        <h2><span class="bi-person-dash-fill"></span>User Login</h2>
+
+        <dl>
+            <dt>Username:</dt>
+            <dd><input type="text" name="" id="" class="form-control"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" name="" id="" class="form-control"></dd>
+        </dl>
+
+        <button class="btn btn-dark w-100" id="btnLogin">Login</button>
+    </form>
+    
+</body>
+</html>

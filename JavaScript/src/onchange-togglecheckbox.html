@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function toggleCheckBox(){
+            const checkbox = document.getElementById("checkbox");
+            const txtUsername = document.getElementById("txtUsername");
+            let msg = document.getElementById("msg");
+
+            if(checkbox.checked){
+                txtUsername.disabled = true;
+                msg.textContent = `The entered input is : ${txtUsername.value}`;
+            }
+            else{
+                msg.textContent = ``;
+                txtUsername.disabled = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="" id="checkbox" onchange="toggleCheckBox()">
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" name="" id="txtUsername"></dd>
+    </dl>
+    <p id="msg">
+
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+    {
+        "Title" : "India",
+        "Photo" : "../../HTML+CSS/HTML/public/images/indian-flag.jpeg",
+        "Price" : 30,
+        "Features" : [0,1,2,3,4],
+        "Ratings" : {
+            "Rate" : 5,
+            "Count" : 1000,
+            "Review" : "Great"
+        }
+    },
+
+    {
+        "Title" : "Nepal",
+        "Photo" : "../../HTML+CSS/HTML/public/images/nepal-flag.jpeg",
+        "Price" : 20,
+        "Features" : [0,1,2,3,4],
+        "Ratings" : {
+            "Rate" : 5,
+            "Count" : 1000,
+            "Review" : "Great"
+        }
+    },
+
+    {
+        "Title" : "Pakistan",
+        "Photo" : "../../HTML+CSS/HTML/public/images/pakistan-map.jpeg",
+        "Price" : 30,
+        "Features" : [0,1,2,3,4],
+        "Ratings" : {
+            "Rate" : 5,
+            "Count" : 1000,
+            "Review" : "Great"
+        }
+    }
+]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="main">
+        <p class="box" name="hell">Hello</p>
+        <p class="box" name="hell">World</p>
+    </div>
+
+    <script type="text/javascript">
+        // a. byId
+        let item = document.getElementById("main");
+        console.log(item);
+        let classItems = document.getElementsByClassName("box");
+        console.log(classItems);
+        let tagNameItems = document.getElementsByTagName("p");
+        console.log(tagNameItems);
+        let nameItems = document.getElementsByName("hell");
+        console.log(nameItems);
+        let queryItems = document.querySelector(".box");
+        console.log(queryItems);
+        let queryAllItems = document.querySelectorAll(".box");
+        console.log(queryAllItems);
+    </script>
+</body>
+</html>

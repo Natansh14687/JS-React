@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meter</title>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        ul{
+            list-style: none;
+        }
+        .bi-star-fill{
+            color: goldenrod;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Ratings and Reviews</legend>
+        <ul>
+            <li>
+                <span>5 </span><span class="bi-star-fill"></span>
+                <meter value="5" min="1" max="10"></meter><span> 35</span>
+            </li>
+            <li>
+                <span>4 </span><span class="bi-star-fill"></span>
+                <meter value="4" min="1" max="10"></meter><span> 5</span>
+            </li>
+            <li>
+                <span>3 </span><span class="bi-star-fill"></span>
+                <meter value="3" max="10" min="1" low="50" high="20"></meter><span> 2</span>
+            </li>
+            <li>
+                <span>2 </span><span class="bi-star-fill"></span>
+                <meter value="2" min="1" max="10" low="40" high="80"></meter><span> 3</span>
+            </li>
+            <li>
+                <span>1 </span><span class="bi-star-fill"></span>
+                <meter value="1" min="1" max="10" low="50" high="20"></meter><span> 3</span>
+            </li>
+        </ul>
+    </fieldset>
+</body>
+</html>

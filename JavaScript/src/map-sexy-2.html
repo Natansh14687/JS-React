@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <ol id="info">
+
+    </ol>
+    <select name="" id="items">
+
+    </select>
+    <div id="checkItems" style="margin-top: 10px;">
+
+    </div>
+    <ol id="link">
+
+    </ol>
+
+    <script type="text/javascript">
+        const arr = ["All", "Electronics", "Mobiles", "KidsFashion"];
+        arr.map((value) => {
+            const li = document.createElement("li");
+            li.textContent = value;
+            document.getElementById("info").appendChild(li);
+        })
+
+        arr.map((values) => {
+            const option = document.createElement("option");
+            option.value = values.toLowerCase();
+            option.textContent = values.toUpperCase();
+            document.getElementById("items").appendChild(option);
+        })
+
+        arr.map((value) => {
+            const checkItems = document.getElementById("checkItems");
+            checkItems.innerHTML += `<input type="checkbox" id="checkboxItems"> <label for="checkboxItems">${value}</label><br>`;
+            
+        })
+        arr.map((value) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = "../"
+            a.textContent = value;
+            document.getElementById("link").appendChild(li).appendChild(a);
+        })
+        document.getElementById("link").style = "list-style:none;"
+    </script>
+</body>
+</html>

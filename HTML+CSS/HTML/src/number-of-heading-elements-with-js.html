@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 1;
+            font-size: small;
+        }
+        h2{
+            font-family: unset;
+            font-size: unset;
+            font-weight: unset;
+            font-style: unset;
+        }
+    </style>
+    <script type="text/javascript">
+        function loadContent(){
+            let h3 = document.getElementsByTagName("h3");
+            console.log(h3);
+            alert(`Number of h3 elements are ${h3.length}`)
+        }
+    </script>
+</head>
+<body onload="loadContent()">
+    <h1>HTML</h1>
+    <h3>CSS</h3>
+    <h2>Javascript</h2>
+    <h3>Node</h3>
+    <h4>MongoDB</h4>
+    <h3>ExpressJs</h3>
+    <h3>ThreeJs</h3>
+</body>
+</html>

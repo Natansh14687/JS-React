@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function verifyCard(){
+            const txtCard = document.getElementById("txtCard");
+            const imgCard = document.getElementById("imgCard");
+
+            let flag = txtCard.value.startsWith("4455");
+
+            if(flag){
+                imgCard.src = "../public/images/mastercard-logo.png";
+            }else{
+                imgCard.src = "../public/images/visa-logo.png";
+            }
+        }
+
+        function verifyEmail(){
+            const txtEmail = document.getElementById("txtEmail");
+            const emailErrorMsg = document.getElementById("emailError");
+
+            let flag = txtEmail.value.endsWith("@gmail.com");
+
+            if(flag){
+                emailErrorMsg = "";
+            }else{
+                emailErrorMsg.innerHTML = "Only Gmail is allowed".fontcolor("red");
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="mt-4"></dl>
+    <dt>Your card number</dt>
+    <dd>
+        <input type="text" name="" id="txtCard" onblur="verifyCard()" style="height: 30px;">
+        <img src="" alt="" id="imgCard" height="50px" width="50px">
+    </dd>
+    <dt>Your Gmail Account</dt>
+    <dd>
+        <input type="email" name="" id="txtEmail" onblur="verifyEmail()">
+    </dd>
+    <dd id="emailError">
+
+    </dd>
+    
+</body>
+</html>

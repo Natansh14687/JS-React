@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function imgDisplay(){
+            const selectCountry = document.getElementById("selectCountry").value;
+            const flagImg = document.getElementById("flagImg");
+            switch(selectCountry){
+                case "india" :
+                    flagImg.style.display = "block"
+                    flagImg.src = "../../HTML+CSS/HTML/public/images/indian-flag.jpeg";
+                    break;
+                case "pakistan" : 
+                    flagImg.style.display = "block";
+                    flagImg.src = "../../HTML+CSS/HTML/public/images/pakistan-map.jpeg";
+                    break;
+                case "nepal" :
+                    flagImg.style.display = "block";
+                    flagImg.src = "../../HTML+CSS/HTML/public/images/nepal-flag.jpeg";
+                    break;
+                default :
+                    flagImg.style.display = "none";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <fieldset class="m-3 border border-2 rounded border-dark p-3 w-25">
+        <h2>Verify Mobile</h2>
+        <h4 style="margin: 10px 0px 10px 0px;">Select Your Country</h4>
+        <img src="" alt="" height="50px" width="50px" id="flagImg" style="display: none;"><br><br>
+        <select name="" id="selectCountry" class="form-select mb-2" onchange="imgDisplay()">
+            <option value="selectCountry">Select Country</option>
+            <option value="india">India</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="nepal">Nepal</option>
+        </select>
+
+        <dl>
+            <dt>Your Mobile</dt>
+            <dd><input type="text" name="" id="mobileNumber" class="form-control"></dd>
+        </dl>
+        <button class="btn btn-primary w-100">Verify</button>
+        <p id="msg"></p>
+    </fieldset>
+</body>
+</html>

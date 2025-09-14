@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let map = new Map();
+        map.set("name", "Natansh");
+        map.set(false,"isMarried");
+        map.set(21, "age");
+        console.log(map);
+        for (const [key,value] of map) {
+            console.log(`${key} => ${value}`);
+        }
+
+        let map1 = new Map();
+        let key = {"name": "natansh", "age":21};
+
+    </script>
+    
+</body>
+</html>

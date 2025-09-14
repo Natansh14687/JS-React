@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let arr = [2,3,10,6,9,4,8,1];
+        arr.sort();
+        console.log(arr);
+
+        arr.sort((a,b) => {
+            return a-b;
+        })
+        console.log(arr);
+
+        arr.sort((a,b) => {
+            return b-a;
+        })
+        console.log(arr);
+
+        let fruits = ['apple','cherry','bannana'];
+        fruits.sort();
+        console.log(fruits);
+    </script>
+</body>
+</html>

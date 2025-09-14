@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="onLoad()">
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+
+        <tbody align="center" id="data">
+
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        async function onLoad(){
+            try{
+                const url = "https://fakestoreapi.com/products/";
+                let response = await fetch(url);
+                let products = await response.json();
+
+                const data = document.getElementById("data");
+                products.forEach((product) => {
+                    const tr = document.createElement("tr");
+                    const tdId = document.createElement("td");
+                    const tdPrice = document.createElement("td");
+                    const tdImage = document.createElement("td");
+                    const tdRatingsRate = document.createElement("td");
+
+                    tdId.textContent = product.id;
+                    tdPrice.textContent = product.price;
+                    tdImage.innerHTML = `<img src="${product.image}" alt="image is loading" height="50px" width="50px">`;
+                    tdRatingsRate.textContent = product.rating.rate;
+
+                    tr.appendChild(tdId);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdImage);
+                    tr.appendChild(tdRatingsRate);
+
+                    data.appendChild(tr);
+
+                });
+            }catch(error){
+                console.log(`Error in fetching data : ${error}`);
+            }
+
+        }
+    </script>
+</body>
+</html>

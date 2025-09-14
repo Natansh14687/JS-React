@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body class="container-fluid">
+    <div class="mt-3 d-flex justify-content-center">
+        <button class="btn btn-success" id="btnStart">Start</button>
+        <button class="btn btn-danger ms-3" id="btnStop">Stop</button>
+    </div>
+    <h1 class="text-secondary text-center">
+
+    </h1>
+
+    <script type="text/javascript">
+
+        function loadTime() {
+            let now = new Date();
+            document.querySelector("h1").textContent = now.toLocaleTimeString();
+        }
+
+        var id = null;
+        document.querySelector("#btnStart").addEventListener("click", function () {
+            if(id === null){
+                id = setInterval(loadTime, 1000);
+            }
+        });
+
+        document.querySelector("#btnStop").addEventListener("click", function () {
+            clearInterval(id);
+            id = null;
+        });
+    </script>
+</body>
+
+</html>

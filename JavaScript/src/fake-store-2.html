@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        header nav a{
+            margin-right: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: lighter;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function loadWebsite(){
+            loadCategories();
+            loadContent("https://fakestoreapi.com/products/");
+        }
+
+        async function loadCategories(){
+            try{
+                const url = "https://fakestoreapi.com/products/categories/";
+                let response = await fetch(url);
+                let categories = await response.json();
+                const selectCategory = document.getElementById("selectCategory");
+                const option = document.createElement("option");
+                option.value = "all";
+                option.textContent = "ALL";
+                selectCategory.appendChild(option);
+                categories.forEach((category) => {
+                    const option = document.createElement("option");
+                    option.value = category;
+                    option.textContent = category.toUpperCase();
+                    selectCategory.appendChild(option);
+                })
+            }catch(error){
+                console.log("Category API fetch error : ", error);
+            }
+        }
+        async function loadContent(url){
+            try{
+                let response = await fetch(url);
+                let products = await response.json();
+
+                const cardsArea = document.getElementById("cardsArea");
+                products.forEach((product) => {
+                    const div = document.createElement("div");
+                    div.className = "card p-2 m-2";
+                    div.style.width = "300px";
+
+                    div.innerHTML = `
+                        <div class="card-header">
+                            <img src="${product.image}" alt="loading..." width="250px" height="100px" align="center">
+                            <blockquote align="center" class="mt-2">${product.title}</blockquote>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="fw-bold">Price</div>
+                            <p>${product.price}</p>
+                            <div class="fw-bold">Rating</div>
+                            <p><span class="bi-star-fill text-success"> </span>${product.rating.rate} [${product.rating.count}]</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <button class="w-100 btn-danger btn bi-cart4"> ADD TO CART</button>
+                        </div>
+
+                    `
+
+                    cardsArea.appendChild(div);
+                })
+            }catch(error){
+                console.error(``)
+            }
+        }
+
+        async function filterProducts(){
+            const selectCategory = document.getElementById("selectCategory");
+            const url = `https://fakestoreapi.com/products/category/${selectCategory.value}`;
+            const cardsArea = document.getElementById("cardsArea");
+            cardsArea.innerHTML = "";
+            if(selectCategory.value === "all"){
+                loadContent("https://fakestoreapi.com/products/");
+            }else{
+                loadContent(url);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="loadWebsite()">
+
+    <header class="text-light bg-black d-flex p-3 mt-2 justify-content-between">
+        <div  class="mt-1 fw-bolder fs-4">FakeStore.</div>
+        <nav class="mt-2">
+            <a href="">Home</a>
+            <a href="">Electronics</a>
+            <a href="">Jewellery</a>
+            <a href="">MensClothing</a>
+            <a href="">WomensClothing</a>
+        </nav>
+        <div class="mb-1">
+            <button class="btn text-dark btn-warning bi-cart">&nbsp;&nbsp; Your Cart <span class="bg-danger border-0 border round d-inline-block" style="width: 25px; border-radius: 50%; position: relative; bottom: 10px; right: 5px;">0</span></button>
+        </div>
+    </header>
+
+    <article align="center" class="bg-black mt-2 text-light pt-2 pb-2">
+        <span class=" text-warning bi-lightning-charge-fill"></span>
+        <span>HOLIDAY DEALS 50% OFF -LIMITED OFFER</span>
+        <span class="bi-lightning-charge-fill text-warning"></span>
+    </article>
+
+    <section class="row mt-3">
+        <nav class="col-2">
+            <label for="selectCategory" class="form-label">Select Category</label>
+            <select name="" id="selectCategory" class="form-select" onchange="filterProducts()">
+
+            </select>
+        </nav>
+
+        <main class="col-10 d-flex flex-wrap" id="cardsArea">
+
+        </main>
+    </section>
+
+
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

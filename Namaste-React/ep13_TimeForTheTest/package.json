@@ -1,0 +1,33 @@
+{
+  "name": "ep13_timeforthetest",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Natansh",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.1.2",
+    "jest": "^30.1.3",
+    "jest-environment-jsdom": "^30.1.2",
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.27.1",
+    "@reduxjs/toolkit": "^2.9.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.8.2",
+    "react-router-dom": "^6.22.0",
+    "tailwindcss": "^4.1.13"
+  }
+}

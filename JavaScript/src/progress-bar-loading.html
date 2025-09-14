@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        *{
+            overflow: hidden;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        img{
+            display: none;
+        }
+        #progressCount{
+            margin: 10px 0px 0px 65px;
+        }
+        #buttons{
+            margin-left: 18px;
+            margin-top: 10px;
+        }
+        button{
+            margin-left: 10px;
+            border: none;
+            cursor: pointer;
+            width: 50px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .bi-pause{
+            color: white;
+            background-color: green;
+        }
+        .bi-play{
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body onload="loadData()">
+    <div class="container">
+        <div class="progress-wrapper">
+            <progress id="file" max="100" value="0"></progress>
+            <div id="progressCount"></div>
+            <div id="buttons"><button id="pause" class="bi-pause" onclick="pauseProgress()"></button><button id="restart" class="bi-play" onclick="continueProgress()"></button></div>
+        </div>
+        <img src="" alt="" height="200" width="200" id="banner" title="itachi-uchiha">
+    </div>
+
+
+    <script type="text/javascript">
+        function loadData(){
+            runProgress();
+        }
+
+        let progress = document.getElementById("file");
+        let interval;
+        function runProgress(){
+            let progressCount = document.getElementById("progressCount");
+            let buttons = document.getElementById("buttons");
+            interval = setInterval(()=>{
+                progress.value++;
+                progressCount.innerHTML = `${progress.value}%`;
+
+                if(progress.value == 100){
+                    clearInterval(interval);
+                    progress.style.display = "none";
+                    progressCount.style.display = "none";
+                    let img = document.getElementById("banner");
+                    img.src = "../public/images/itachi-image-1.jpg"
+                    img.style.display = "block";
+                    buttons.style.display = "none";
+                }
+            },50)
+
+
+        }
+        let stopValue;
+        function pauseProgress(){
+            let pause = document.getElementById("pause");
+            clearInterval(interval);
+            stopvalue = progress.value;
+        }
+
+        function continueProgress(){
+            progress.value = stopvalue;
+            interval = setInterval(()=>{
+                progress.value++;
+                progressCount.innerHTML = `${progress.value}%`;
+
+                if(progress.value == 100){
+                    clearInterval(interval);
+                    progress.style.display = "none";
+                    progressCount.style.display = "none";
+                    let img = document.getElementById("banner");
+                    img.src = "../public/images/itachi-image-1.jpg"
+                    img.style.display = "block";
+                    buttons.style.display = "none";
+                }
+            },50)
+        }
+    </script>
+</body>
+</html>

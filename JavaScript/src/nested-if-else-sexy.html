@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        function moveNext(){
+            const msg = document.getElementById("msg");
+            const cardNumber = document.getElementById("cardNumber");
+            if(cardNumber.value === "999888777"){
+                const cvv = document.getElementById("cvv");
+                cvv.disabled = false;
+                if(cvv.value === "333"){
+                    const expiryYear = document.getElementById("expiryYear");
+                    expiryYear.disabled = false;
+                    if(expiryYear.value === "2025"){
+                        const pay = document.getElementById("pay");
+                        const next = document.getElementById("next");
+                        pay.disabled = false;
+                        next.disabled = true;
+                    }else{
+                        msg.innerHTML = "Invalid Exiry Year".fontcolor("red");
+                    }
+                }else{
+                    msg.innerHTML = "Invalid CVV".fontcolor("purple");
+                }
+            }else{
+                msg.innerHTML = "Invalid CardNumber".fontcolor("blue");
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset style="width: 250px;">
+        <legend>Payment Details</legend>
+
+        <dl>
+            <dt>CardNumber</dt>
+            <dd><input type="text" name="" id="cardNumber"></dd>
+            <dt>CVV</dt>
+            <dd><input type="text" name="" id="cvv" disabled></dd>
+            <dt>Expiry</dt>
+            <dd>
+                <select name="" id="expiryYear" disabled>
+                    <option value="choose expiry">Choose Expiry</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+            </dd>
+            <div style="margin-top: 20px;">
+                <button id="pay" disabled>Pay</button>
+                <button id="next" onclick="moveNext()">Next</button>
+            </div>
+        </dl>
+        <p style="margin-top: 20px; align-self: center;" id="msg"></p>
+    </fieldset>
+</body>
+</html>

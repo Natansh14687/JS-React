@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let arr = ['sachin', 51, 53.4, true];
+        // before destructuring
+        let userName = arr[0];
+        let userAge = arr[1];
+        let userAvg = arr[2];
+        let isMarried = arr[3];
+        console.log(userName, userAge, userAvg, isMarried);
+
+        let [Username, Userage, Useravg, Ismarried] = arr;
+        console.log(Username, Userage, Useravg, Ismarried);
+
+        // function returning array unpacking 
+        function presentData() {
+            return ['kohli',38,'56.5',true];
+        }
+
+        let [name,age,avg,status] = presentData();
+        console.log(name,age,avg,status);
+
+        let arr2 = ['sachin',,'M'];
+        const[name1,age1='Not Mentioned',gender,email] = arr2;
+        console.log(age1);
+        console.log(email);
+
+
+
+
+
+
+        let user = {
+            userName : 'sachin',
+            age  : 51,
+            gender: 'M',
+            email : 'sachin@mi.com'
+        }
+
+        console.log();
+        let {userName : playerName, age : playerAge} = user;
+        console.log(playerName, playerAge);
+    </script>
+</body>
+</html>

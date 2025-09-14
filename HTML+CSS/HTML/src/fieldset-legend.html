@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fieldset Legend</title>
+    <style type="text/css">
+        fieldset{
+            width: 500px;
+            margin-bottom: 20px;
+            background-image: url("../public/images/netflix-bg.jpg");
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 10px 10px 20px 5px gray;
+            border-radius: 20px;
+        }
+        legend{
+            text-align: center;
+            border: 2px solid black;
+            color: white;
+            background-color: #000;
+            padding: 5px;
+            font-size: large;
+            font-weight: 700;
+        }
+        dl{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            color: white;
+        }
+        dt{
+            background-color: rgb(128, 177, 128);
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        dd{
+            background-color: lightgray;
+            color: black;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Person Details</legend>
+        <dl>
+            <dt>Name</dt><dd>Natansh</dd>
+            <dt>Age</dt><dd>21</dd>
+            <dt>Gender</dt><dd>Male</dd>
+            <dt>Last Name</dt><dd>Khurana</dd>
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>Contact Detials</legend>
+        <dl>
+        <dt>Country</dt><dd>India</dd>
+        <dt>State</dt><dd>Haryana</dd>
+        <dt>City</dt><dd>Sirsa</dd>
+        </dl>
+    </fieldset>
+</body>
+</html>

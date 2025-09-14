@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let Id = Symbol();
+        let product = {
+            [Id] : 10,
+            "name": "Samsung",
+            "price": "36000",
+            "warranty": 2
+        }
+
+        for (const keys of Object.keys(product)) {
+            console.log(product[keys]);
+            
+        }
+
+        console.log(`the id of this product is ${product[Id]}`)
+
+        let id1 = Symbol("PW");
+        let id2 = Symbol("PW");
+        let product0 = {
+            [id1] : "AB12",
+            [id2] : "AB34"
+        }
+
+        console.log();
+    </script>
+
+</body>
+</html>

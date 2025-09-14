@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let details = 'HOME|PAGES|CONTACTUS|ABOUTUS|Support|Help';
+        let items = details.split('|');
+        let ul = document.createElement("ul");
+
+        let output = item => {
+            let li = document.createElement("li");
+            li.textContent = item.toUpperCase();
+            ul.appendChild(li);
+        }
+
+        items.forEach(output);
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>

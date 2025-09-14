@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="/abc">
+        <input type="password" name="txtPwd" id="" pattern="[A-Z]{4,15}" required placeholder="pls enter your name">
+        <input type="range" name="txtPrice" id="" min="1000" max="10000"> 
+        <input type="email" name="txtEmail" id="" placeholder="please enter your email">
+        <input type="url" name="txtUrl" id="" size="50" placeholder="please enter url">
+        <input type="date" name="txtDate" id="" min="2025-06-10" max="2025-06-30">
+        <input type="file" name="txtFile" id="" multiple>
+        <input type="file" name="txtSpecificFile" id="" multiple accept=".jpeg, .jpg, .png"><br><br>
+        <div>Gender:</div>
+        <input type="radio" name="gender" id="male" value="male"><label for="male">male</label>
+        <input type="radio" name="gender" id="female" value="female" checked><label for="female">female</label>
+        <div>Topic:</div>
+        <input type="checkbox" name="topic" id="html" value="html" checked><label for="html">HTML</label>
+        <input type="checkbox" name="topic" id="css" value="css"><label for="css">CSS</label>
+        <input type="checkbox" name="topic" id="javascript" value="javascript" checked><label for="javascript">JAVASCRIPT</label>
+        <select name="country" id="">
+            <option value="india">INDIA</option>
+            <option value="africa">AFRICA</option>
+        </select>
+        
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

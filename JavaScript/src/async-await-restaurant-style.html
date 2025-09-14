@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function prepareFood(){
+            return new Promise((resolve,reject) => {
+                let isCookAvailable = true;
+                setTimeout(()=>{
+                    if(isCookAvailable){
+                        resolve("🍽️ Food is ready...");
+                    }else{
+                        reject("🧑‍🍳 Chef is not available...");
+                    }
+                },2000);
+            });
+        }
+
+        async function serveCustomer(){
+            try{
+                console.log("Order taken from customer");
+                let msg = await prepareFood();
+                console.log(`Status is : ${msg}`);
+            }catch(error){
+                console.log(`Status is : ${error}`);
+            }
+        }
+
+        serveCustomer();
+        console.log("Waiter served the customer with water...");
+    </script>
+</body>
+</html>

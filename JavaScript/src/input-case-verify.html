@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function verifyCase(){
+            const txtData = document.getElementById("txtData");
+            const msgError = document.getElementById("error-msg");
+
+            let flag = txtData.value.charCodeAt(0) >= 65 && txtData.value.charCodeAt(0) <= 90;
+
+            if(flag){
+                msgError.textContent = "";
+            }else{
+                msgError.innerHTML = "first character should be upper case".fontcolor("red").bold();
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" name="" id="txtData" onblur="verifyCase()"></dd>
+        <dd id="error-msg" style="margin-top: 10px;">
+
+        </dd>
+    </dl>
+</body>
+</html>

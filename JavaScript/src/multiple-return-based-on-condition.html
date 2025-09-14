@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function doTask(operation){
+            if(operation=="login"){
+                return `
+                    <dl>
+                        <dt>Username:</dt>
+                        <dd><input type="text" name="userName" id="user-name"></dd>
+                        <dt>Password:</dt>
+                        <dd><input type="password" name="password" id="password"></dd>
+                        <dt></dt>
+                        <dd><button type="submit">login</button></dd>
+                    </dl>
+                        
+                `
+            }else{
+                return `
+                    <dl>
+                        <dt>Username:</dt>
+                        <dd><input type="text" name="userName" id="user-name"></dd>
+                        <dt>Password:</dt>
+                        <dd><input type="password" name="password" id="password"></dd>
+                        <dt>User Mobile</dt>
+                        <dd><input type="text" name="userMobile" id="user-mobile"></dd>
+                        <dt></dt>
+                        <dd><button type="submit">register</button></dd>
+                    </dl>
+                `
+            }
+        }
+
+        doTask(prompt("Please login or register", "login | register"));
+    </script>
+</body>
+</html>

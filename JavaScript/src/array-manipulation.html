@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body class="container-fluid" onload="loadCities()">
+    <h1>Array Manipulation</h1>
+    <div class="w-25 m-3">
+        <label for="inputCity" class="form-label">Add City</label>
+        <div class="input-group">
+            <input type="text" name="" id="inputCity" class="form-control">
+            <button class="btn btn-primary" onclick="addTheCity()">ADD</button>
+        </div>
+
+        <label for="" class="mt-3">Select City</label>
+        <div class="mt-2">
+            <button class=" btn btn-success bi-sort-alpha-up" onclick="sortDecending()" id="sortDecBtn"></button>
+            <button class="btn btn-success bi-sort-alpha-down" onclick="sortAscending()" id="sortAscBtn"></button>
+        </div>
+
+        <div class="mt-3">
+            <select name="" id="citiesList" size="3" class="form-select">
+                
+            </select>
+            <p class="fw-bold fs-5 mt-2" id="countCities">
+
+            </p>
+        </div>
+
+        <div class="mt-3">
+            <button class="bi-trash-fill btn btn-danger" onclick="removeSelectedCity()">Remove City</button>
+            <button class="btn btn-danger bi-trash-fill" onclick="clearAllCities()">Clear All</button>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        let cities = ['bengaluru','hyderabad'];
+        function loadCities(){
+            const citiesList = document.getElementById("citiesList");
+            const countCities = document.getElementById("countCities");
+            cities.forEach((city) => {
+                const option = document.createElement("option");
+                option.value = city.toLowerCase();
+                option.textContent = city.toUpperCase();
+                citiesList.appendChild(option);
+            })
+
+            countCities.innerHTML = `Total number of Cities is : ${cities.length}`;
+        }
+
+        function addTheCity(){
+            const citiesList = document.getElementById("citiesList");
+            const countCities = document.getElementById("countCities");
+            const inputCity = document.getElementById("inputCity");
+            if(inputCity.value === ""){
+                alert("Please enter a city name");
+            }else if(cities.includes(inputCity.value.toLowerCase())){
+                alert("The city already exixts in the list");
+            }else{
+                cities.push(inputCity.value.toLowerCase());
+                const option = document.createElement("option");
+                option.value = inputCity.value.toLowerCase();
+                option.textContent = inputCity.value.toUpperCase();
+                citiesList.appendChild(option);
+                countCities.innerHTML = `Total number of Cities is : ${cities.length}`;
+                const sortAscBtn = document.getElementById("sortAscBtn");
+                const sortDecBtn = document.getElementById("sortDecBtn");
+                sortDecBtn.className = "btn btn-success bi-sort-alpha-up";
+                sortAscBtn.className = "btn btn-success bi-sort-alpha-down";
+            }
+            inputCity.value = "";
+        }
+
+        function sortDecending(){
+            cities.sort();
+            cities.reverse();
+            const citiesList = document.getElementById("citiesList");
+            citiesList.innerHTML = "";
+            loadCities();
+            const sortDecBtn = document.getElementById("sortDecBtn");
+            sortDecBtn.className = "btn btn-success bi-sort-alpha-up opacity-50";
+            const sortAscBtn = document.getElementById("sortAscBtn");
+            sortAscBtn.className = "btn btn-success bi-sort-alpha-down";
+        }
+        
+        function sortAscending(){
+            cities.sort();
+            const citiesList = document.getElementById("citiesList");
+            citiesList.innerHTML = "";
+            loadCities();
+            const sortAscBtn = document.getElementById("sortAscBtn");
+            sortAscBtn.className = "btn btn-success bi-sort-alpha-down opacity-50";
+            const sortDecBtn = document.getElementById("sortDecBtn");
+            sortDecBtn.className = "btn btn-success bi-sort-alpha-up";
+        }
+
+        function clearAllCities(){
+            cities = [];
+            const citiesList = document.getElementById("citiesList");
+            citiesList.innerHTML = "";
+            const countCities = document.getElementById("countCities");
+            countCities.innerHTML = `Total number of Cities is : ${cities.length}`;
+        }
+
+        function removeSelectedCity(){
+            const citiesList = document.getElementById("citiesList");
+    
+            if(citiesList.selectedIndex !== -1){
+                cities.splice((citiesList.selectedIndex),1);
+                citiesList.innerHTML = "";
+                loadCities();
+            }else{
+                alert("Please select a city to delete");
+            }
+        }
+    </script>
+</body>
+</html>

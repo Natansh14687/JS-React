@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function printData({id, ...otherData}){
+            console.log(id);
+            console.log(otherData);
+            const {name, gender, isMarried, salary = 'Not Displayed'} = otherData;
+            console.log({otherData});
+            console.log(name);
+            console.log(salary);
+        }
+
+        let userData = { id : 10, 'name' : 'sachin', 'gender' : 'M', 'isMarried': true};
+        printData({...userData})
+    </script>
+</body>
+</html>

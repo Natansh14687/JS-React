@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        console.log("Program started the execution");
+        try{
+            let a = 10;
+            let b = a + undeclaredVariable;
+            console.log(b);
+            
+        }catch(error){
+            console.log(error);
+            console.log("Error name is : ", error.name);
+            console.log("Error message is : ", error.message);
+            console.log("Error stack status is : ", error.stack);  
+        }
+        console.log("Graceful termination");
+        
+        
+    </script>
+</body>
+</html>

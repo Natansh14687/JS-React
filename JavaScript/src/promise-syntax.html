@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let action = new Promise((resolve,reject) => {
+            let result = "data.json";
+            if(result){
+                resolve(result);
+            }else{
+                reject("rejected");
+            }
+        })
+
+        action
+            .then((output) => {
+                console.log(output);
+                console.log(typeof output);
+            }).catch((error)=>{
+                console.log(error);
+            })
+    </script>
+</body>
+</html>

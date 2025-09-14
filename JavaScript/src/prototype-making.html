@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let radius = [3,4,1,2]
+        const area = function(rad){
+            return Math.PI * rad * rad;
+        }
+
+        const areaArr = radius.map(area);
+        console.log(areaArr);
+        
+        // making own prototype like map
+
+        Array.prototype.calculate = function(logic){
+            let output = [];
+
+            for(let i=0; i<radius.length; i++){
+                output.push(logic(radius[i]));
+            }
+
+            return output;
+        }
+
+        console.log(radius.calculate(area));
+
+        // to make this prototype to work for any name array other than radius also use this 
+
+        Array.prototype.calculate = function(logic){
+            let output = [];
+
+            for(let i=0; i<this.length; i++){
+                output.push(logic(this[i]));
+            }
+
+            return output;
+        }
+         
+
+
+    </script>
+</body>
+</html>

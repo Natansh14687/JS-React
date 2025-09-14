@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        header nav span{
+            margin-right: 20px;
+        }
+        header #dateTime span{
+            margin-right: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function loadContent(){
+            const month = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+            const weekDay = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+            let now = new Date();
+            const date = document.getElementById("date");
+            const time = document.getElementById("time");
+
+            date.innerHTML = ` <span>&nbsp; ${now.getDate()}, ${weekDay[now.getDay()].toUpperCase()}, ${month[now.getMonth()].toUpperCase()}, ${now.getFullYear()}</span>`;
+            time.innerHTML = ` <span>&nbsp; ${now.getHours()%12}:${now.getMinutes()}:${now.getSeconds()} ${now.getHours() < 12 ? "AM" : "PM"}</span>`;
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="loadContent()">
+    <header class="bg-black d-flex justify-content-between text-light p-2 mt-2">
+        <div class="fw-bold fs-4">Shopper.</div>
+        <nav class="fw-lighter mt-2">
+            <span>Home</span>
+            <span>About</span>
+            <span>Contact</span>
+        </nav>
+        <div class="mt-2" id="dateTime">
+            <span class="bi-calendar" id="date"> </span>
+            <span class="bi-clock" id="time"> </span>
+        </div>
+    </header>
+    <div class="d-flex justify-content-center align-items-center h-75">
+        <div>
+            <p id="greeting"></p>
+            <img id="greetingImage" src="" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "netflixgpt-ebcd6",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
+
+    
