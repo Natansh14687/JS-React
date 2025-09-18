@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Body from './components/Body'
 import {Provider} from "react-redux";
@@ -15,7 +15,7 @@ const App = () => {
 }
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <App />
-  </StrictMode>,
+  // {/* </StrictMode>, */}
 )
