@@ -12,3 +12,9 @@ export const TOP_RATED_MOVIE_API = 'https://api.themoviedb.org/3/movie/top_rated
 export const UPCOMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 
 export const POSTER_IMAGE_API = "https://image.tmdb.org/t/p/w500/";
+
+export const SUPPORTED_LANGUAGES = [
+  {identifier: "en", name: "English"},
+  {identifier: "hindi", name:"Hindi"},
+  {identifier: "spanish", name:"Spanish"},
+];
